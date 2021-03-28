@@ -102,16 +102,18 @@
                 </GridLayout>
               </ScrollView>
             </GridLayout>
+            
+            <!-- Recently Added-->
             <GridLayout columns="auto,*,auto" rows="auto">
                 <Label text="Recently Added" row="0" col="0" class="h1 title_header" />
                 <Label text="" row="0" col="1"/>
-                <Label text="Explore" row="0" col="2" class="explore" />
+                <Label text="More" row="0" col="2" class="explore" />
             </GridLayout>
             <GridLayout columns="*" rows="*">
               <ScrollView orientation="horizontal"  class="app_recent">
                 <GridLayout columns="auto,auto,auto,auto,auto" rows="auto,auto,auto,auto">
                   <GridLayout columns="auto,auto" rows="auto,auto,auto" row="0" col="0" class="music_detials">
-                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
+                    <Image src="~/assets/images/artists/233-mikenoris-daddy9ja.jpg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
                       <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" textWrap="true" />
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
@@ -138,13 +140,6 @@
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
                     </GridLayout>
                   </GridLayout>
-                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="0" col="4" class="music_detials">
-                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
-                    <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
-                      <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
-                      <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
-                    </GridLayout>
-                  </GridLayout>
                   <GridLayout columns="auto,auto" rows="auto,auto,auto" row="1" col="0" class="music_detials">
                     <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
@@ -153,31 +148,84 @@
                     </GridLayout>
                   </GridLayout>
                   <GridLayout columns="auto,auto" rows="auto,auto,auto" row="1" col="1" class="music_detials">
+                    <Image src="~/assets/images/artists/233-mikenoris-daddy9ja.jpg" class="artwork" row="0" col="0"/>
+                    <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
+                      <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
+                      <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
+                    </GridLayout>
+                  </GridLayout>
+                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="2" col="0" class="music_detials">
                     <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
                       <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
                     </GridLayout>
                   </GridLayout>
-                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="1" col="2" class="music_detials">
+                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="2" col="1" class="music_detials">
                     <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
                       <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
                     </GridLayout>
                   </GridLayout>
-                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="1" col="3" class="music_detials">
+                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="3" col="0" class="music_detials">
                     <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
                       <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
                     </GridLayout>
                   </GridLayout>
-                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="1" col="4" class="music_detials">
+                  <GridLayout columns="auto,auto" rows="auto,auto,auto" row="3" col="1" class="music_detials">
                     <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork" row="0" col="0"/>
                     <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
                       <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
                       <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
+                    </GridLayout>
+                  </GridLayout>
+                </GridLayout>
+              </ScrollView>
+            </GridLayout>
+
+            <!-- Artists to follow -->
+            <GridLayout>
+                <Label text="Artists to follow" class="h1 title_header" />
+            </GridLayout>
+            <GridLayout columns="*" rows="*">
+              <ScrollView orientation="horizontal"  class="app_rec_artists">
+                <GridLayout columns="auto,auto,auto,auto,auto">
+                  <GridLayout rows="auto,auto" col="0" class="music_detials">
+                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artists" row="0"/>
+                    <GridLayout columns="*" rows="auto,auto,auto" row="1" class="music_info">
+                      <Label text="Chinko Ekun" row="0" class="artist_name" />
+                      <Label text="Something else here" row="1" class="icons" />
+                    </GridLayout>
+                  </GridLayout>
+                  <GridLayout rows="auto,auto" col="1" class="music_detials">
+                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artists" row="0"/>
+                    <GridLayout columns="*" rows="auto,auto,auto" row="1" class="music_info">
+                      <Label text="Chinko Ekun" row="0" class="artist_name" />
+                      <Label text="Something else here" row="1" class="icons" />
+                    </GridLayout>
+                  </GridLayout>
+                  <GridLayout rows="auto,auto" col="2" class="music_detials">
+                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artists" row="0"/>
+                    <GridLayout columns="*" rows="auto,auto,auto" row="1" class="music_info">
+                      <Label text="Chinko Ekun" row="0" class="artist_name" />
+                      <Label text="Something else here" row="1" class="icons" />
+                    </GridLayout>
+                  </GridLayout>
+                  <GridLayout rows="auto,auto" col="3" class="music_detials">
+                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artists" row="0"/>
+                    <GridLayout columns="*" rows="auto,auto,auto" row="1" class="music_info">
+                      <Label text="Chinko Ekun" row="0" class="artist_name" />
+                      <Label text="Something else here" row="1" class="icons" />
+                    </GridLayout>
+                  </GridLayout>
+                  <GridLayout rows="auto,auto" col="4" class="music_detials">
+                    <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artists" row="0"/>
+                    <GridLayout rows="auto,auto,auto" row="1" class="music_info">
+                      <Label text="Chinko Ekun" row="0" class="artist_name" />
+                      <Label text="Something else here" row="1" class="icons" />
                     </GridLayout>
                   </GridLayout>
                 </GridLayout>
@@ -189,10 +237,11 @@
           <GridLayout class="music_player" columns="auto,*,auto,auto">
             <Image src="~/assets/images/artists/223-crayon-daddy9ja.jpeg" class="artwork_playing" col="0" @tap="loginTwitter"/>
             <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
-              <Label text="Jafafa Jafafa Jafafa Jafafa" row="0" col="0" class="music_name" />
+              <Label text="Jafafa" row="0" col="0" class="music_name" />
               <Label text="Chinko Ekun" row="1" col="0" class="artist_name" />
             </GridLayout>
-            <Image src="~/assets/images/icons/play.png" class="" width="35" col="2" @tap="loginTwitter"/>
+            <Image src="~/assets/images/icons/play-button.png" class="play_pause" width="35" col="2" @tap="loginTwitter"/>
+            <Image src="~/assets/images/icons/menu.png" class="" width="20" col="3" @tap="loginTwitter"/>
           </GridLayout>
         </StackLayout>
         <StackLayout row="2" orientation="horizontal" class="music_deck">
@@ -287,15 +336,6 @@ export default {
     width: 130;
     border-radius: 10;
   }
-  .music_player {
-    padding-right: 10;
-    padding-left: 10;
-    padding-bottom: 10;
-  }
-  .artwork_playing {
-    width: 50;
-    margin-right: 10;
-  }
   .app_trending .music_detials {
     margin-right: 30;
     margin-bottom: 20;
@@ -334,11 +374,20 @@ export default {
     background:rgba(255,255,255,0.025);
     padding-top: 15;
     padding-bottom: 10;
-    margin-left: 10;
-    margin-right: 10;
+    margin-left: 15;
+    margin-right: 15;
     margin-bottom: 5;
     border-radius: 10;
     text-align: center;
+  }
+  .music_player {
+    padding-right: 15;
+    padding-left: 15;
+    padding-bottom: 10;
+  }
+  .artwork_playing {
+    width: 50;
+    margin-right: 10;
   }
   .music_deck .music_name {
     color: #F50125;
@@ -346,5 +395,24 @@ export default {
   }
   .music_deck .artist_name {
     font-size: 13px;
+    color: #FFFFFF;
+    font-weight: 300;
+  }
+  .play_pause {
+    margin-left: 10;
+    margin-right: 10;
+  }
+  .app_rec_artists .music_detials {
+    text-align: center;
+    margin-right: 30;
+  }
+  .app_rec_artists .artists {
+    width: 130;
+    border-radius: 100%;
+    margin-bottom: 10;
+  }
+  .app_rec_artists .artist_name {
+    font-size: 18px;
+    color: #FFFFFF;
   }
 </style>
