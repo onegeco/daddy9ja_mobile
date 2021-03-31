@@ -3,8 +3,8 @@
       <GridLayout rows="auto,*,auto,auto" class="home_container page">
         <GridLayout columns="40, *, 40" rows="auto" class="app_header" row="0">
             <Image src="~/assets/images/icons/user.png" class="app_avatar" width="36" row="0" col="0"/>
-            <Label text="" row="0" col="1"/>
-            <Image src="~/assets/images/icons/search-interface-symbol.png" class="app_search" width="20" row="0" col="2" />
+            <Label text="Username" row="0" col="1" class="h1 username"/>
+            <Image src="~/assets/images/icons/menu.png" class="app_search" width="20" row="0" col="2" />
         </GridLayout>
 
         <ScrollView orientation="vertical" row="1" v-if="!isLoading">
@@ -47,42 +47,6 @@
                   </GridLayout>
                 </GridLayout>
               </GridLayout>
-            </GridLayout>
-
-            <!-- Trending -->
-            <GridLayout columns="auto,*,auto" rows="auto">
-                <Label text="Trending" row="0" col="0" class="h1 title_header" />
-                <Label text="" row="0" col="1"/>
-                <Label text="See More" row="0" col="2" class="explore" />
-            </GridLayout>
-            <GridLayout columns="*" rows="*">
-              <ScrollView orientation="horizontal"  class="app_trending">
-                <GridLayout columns="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" rows="*">
-                  <GridLayout columns="auto,auto" rows="auto,auto,auto" :key="index" v-for="(d9songs,index) in trendingSongs" :col="index" class="music_detials">
-                    <Image :src="`https://daddy9ja.com/storage/songs/${ d9songs.url }/single/${ d9songs.artwork_file }`" class="artwork" row="0" col="0" @tap="gotoMusica"/>
-                    <GridLayout columns="*" rows="auto,auto,auto" row="0" col="1" class="music_info">
-                      <Label :text="d9songs.music_name" row="0" col="0" class="music_name" textWrap="true"/>
-                      <Label textWrap="true" class="artist_name" row="1" col="0">
-                        <FormattedString>
-                            <Span :text="d9songs.artist"/>
-                            <Span v-if="d9songs.featuring != ''" text=" ft. "/>
-                            <Span v-if="d9songs.featuring != ''" :text="d9songs.featuring"/>
-                        </FormattedString>
-                      </Label>
-                      <GridLayout row="2" col="0" columns="auto,auto" class="trend_icon">
-                        <GridLayout col="0" columns="auto,*" class="m-r-15">
-                          <Image src="~/assets/images/icons/play-button-arrowhead.png" width="14" class="m-r-5" col="0" />
-                          <Label text="999M" col="1" class="grid_name" />
-                        </GridLayout>
-                        <GridLayout col="1" columns="auto,*">
-                          <Image src="~/assets/images/icons/heart_filled.png" width="14" class="m-r-5" col="0" />
-                          <Label :text="d9songs.favourites" col="1" class="grid_name" />
-                        </GridLayout>
-                      </GridLayout>
-                    </GridLayout>
-                  </GridLayout>
-                </GridLayout>
-              </ScrollView>
             </GridLayout>
             
             <!-- Recently Added-->
@@ -203,11 +167,6 @@
           </StackLayout>
         </ScrollView>
 
-        <!-- Loader -->
-        <GridLayout columns="*" rows="*" row="1" v-if="isLoading">
-            <Image src="~/assets/images/logo.png" width="40" row="0" col="0" class="loader logo_scale"/>
-        </GridLayout>
-
         <!-- Music Deck-->
         <StackLayout row="2" v-show="isPlaying" orientation="horizontal" class="music_deck">
           <GridLayout class="music_progress">
@@ -258,85 +217,21 @@
 </template>
 
 <script>
-import axios from "axios";
-import * as imageCache from "tns-core-modules/ui/image-cache";
-import * as imageSource from "tns-core-modules/image-source";
-//import * as statusBar from 'nativescript-status-bar';
-//statusBar.hide();
-
-import Musica from './Musica';
-import Offline  from './Offline';
 export default {
-  data() {
-    return {
-      isLoggedIn: false,
-      isInitialized: false,
-      currentProgress: 0,
-      isPlaying: false,
-      trendingSongs: {},
-      recentUpload: {},
-      isLoading: true,
-      networkStatus: false,
-      networkMsg: '',
-    }
-  },
+    data() {
+        return {
 
-  methods: {
-    checkNetwork() {
-      
-    },
-    getTrending() {
-      axios.get('https://daddy9ja.com/api/d9songs/d9trending').then( response => {
-        this.trendingSongs = response.data;
-      })
-    },
-
-    getRecentUploads() {
-        axios.get('https://daddy9ja.com/api/d9songs/d9recent').then( response => {
-          this.recentUpload = response.data;
-        }).then(() => {
-          this.isLoading = false;
-        })
-    },
-    Loading() {
-        this.isLoading = false;
-    },
-
-    gotoMusica(e) {
-      this.$navigateTo(Musica, {
-        transition: {
-            name:'slide',
-            duration: 200
-        },
-        props: {
-          music: e.item
         }
-      });
-    }
-  },
-
-  computed: {
-    rows: function() {
-        const rows = [];
-        for (let i = 0; i < this.recentUpload.length / 3; i++) {
-            rows.push("auto");
-        }
-        return rows.join(",");
     },
-  },
 
-  mounted() {
-    if(this.getTrending() & this.getRecentUploads()) {
-      setTimeout(() => {
-          this.Loading();
-      }, 1000) 
+    methods: {
+
     }
-  }
 }
 </script>
 
 <style scoped>
-  .page {
+.page {
     background: #000000;
     color: #ffffff;
   }
@@ -519,5 +414,10 @@ export default {
   }
   .app_picks .music_detials {
     margin-top: 20;
+  }
+  .username {
+      font-size: 25px;
+      text-align: center;
+      color: #FFFFFF;
   }
 </style>
